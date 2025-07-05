@@ -1,12 +1,18 @@
-# utils.py
+# ---- utils.py ----
 import jinja2
 import json
 from jsonpath_ng.ext import parse as jsonpath_parse
 from httpx import Response
 
 
-def render_template(template: str, context: dict) -> str:
-    return jinja2.Template(template).render(**context)
+def render_template(value, context: dict):
+    if isinstance(value, str):
+        return jinja2.Template(value).render(**context)
+    elif isinstance(value, dict):
+        return {k: render_template(v, context) for k, v in value.items()}
+    elif isinstance(value, list):
+        return [render_template(i, context) for i in value]
+    return value
 
 
 def extract_variables(response: Response, extract_config: dict, context: dict):
