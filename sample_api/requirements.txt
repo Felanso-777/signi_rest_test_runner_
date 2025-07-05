@@ -1,0 +1,6 @@
+httpx
+pyyaml
+jinja2
+jsonpath-ng
+fastapi        # for sample_api
+uvicorn        # for sample_api server
