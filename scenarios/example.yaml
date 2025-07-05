@@ -4,7 +4,7 @@ steps:
   - name: Login
     request:
       method: POST
-      url: "https://api.example.com/login"
+      url: "http://127.0.0.1:8000/login"
       body:
         email: "test@example.com"
         password: "secret"
@@ -14,10 +14,9 @@ steps:
   - name: Get Profile
     request:
       method: GET
-      url: "https://api.example.com/profile"
+      url: "http://127.0.0.1:8000/profile"
       headers:
         Authorization: "Bearer {{ token }}"
     assert:
       status_code: 200
-      body:
-        email: "test@example.com"
+      $.email: "test@example.com"
