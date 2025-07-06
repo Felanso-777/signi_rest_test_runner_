@@ -54,6 +54,11 @@ Validating step: Get Profile
 
 ---
 
+## 📸 Screenshots
+
+ 📸 Screenshots included: `login.png`, `hello.png`, and `profile.png` added under `test_results/` for visual confirmation of endpoint responses.
+
+
 ## 📝 Summary
 
 * ✅ Test scenario executed end-to-end with no failures
