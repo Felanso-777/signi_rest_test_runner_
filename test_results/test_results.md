@@ -9,6 +9,9 @@ This folder contains the results and configuration files used during testing of 
 This file defines the test steps executed during the validation run:
 
 ```yaml
+
+```
+# ---- scenarios/example.yaml ----
 name: User login and fetch profile
 steps:
   - name: Login
@@ -30,40 +33,34 @@ steps:
     assert:
       status_code: 200
       $.email: "test@example.com"
-```
 
 ---
 
-## 🧪 Sample Output Log (`output_log.txt`)
+## 🧪  Output Log 
 
 ```
-📄 Using scenario file: scenarios/example.yaml
-🚀 Executing step: Login
+�📄 Using scenario file: C:\Users\Lenovo\Documents\Internship_signi_5_sys\signi_rest_test_runner\scenarios\example.ya
+
+�🚀 Executing step: Log
 ✅ Step 'Login' executed with status: 200
-🔧 Extracted 'token' = mocked-access-token
-🚀 Executing step: Get Profile
+�🔧 Extracted 'token' = mocked-access-tok
+
+�🚀 Executing step: Get Profile
 ✅ Step 'Get Profile' executed with status: 200
 ✅ Status code assertion passed
 ✅ Assertion passed: $.email = test@example.com
-```
+Validating step: Login
+Validating step: Get Profile
 
 ---
 
 ## 📝 Summary
 
 * ✅ Test scenario executed end-to-end with no failures
-* 🔑 Access token successfully extracted and reused
-* 📥 Profile details validated using JSONPath assertion
+
 
 ---
 
-## 📎 Files to Include in This Folder
 
-* `test_results.md` — This summary file ✅
-* `example.yaml` — The scenario used for testing
-* `output_log.txt` — Terminal log of the run (optional)
-* `screenshot_result.png` — (Optional) screenshot showing success in terminal or browser
 
----
 
-> These results demonstrate the system's ability to run test scenarios, extract and use tokens, and validate responses.
